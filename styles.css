@@ -1,0 +1,192 @@
+/* Tổng quát */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  color: #fff;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1000px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header h1 {
+  height: 100px;
+  width: 500px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #ffedbc;
+  margin: auto;
+}
+
+.header p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #fff;
+  margin: auto;
+}
+
+/* Các hàng thời gian */
+.time-row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.time-block {
+  margin: 0 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 80px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.time-block span {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.time-block p {
+  font-size: 1rem;
+  margin: 5px 0 0;
+  color: #fddede;
+}
+
+/* Hiệu ứng */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hiệu ứng chớp chớp */
+.blink-char {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff4d4d, 0 0 20px #ff1a1a, 0 0 30px #ff1a1a;
+  animation: blinkEffect 1.5s infinite;
+  opacity: 0;
+}
+
+/* Hiệu ứng nhấp nháy */
+@keyframes blinkEffect {
+  0%, 50%, 100% {
+    opacity: 0.2;
+  }
+  25%, 75% {
+    opacity: 1;
+  }
+}
+
+/* Thời gian chờ khác nhau cho từng ký tự */
+.blink-char:nth-child(1) { animation-delay: 0s; }
+.blink-char:nth-child(2) { animation-delay: 0.1s; }
+.blink-char:nth-child(3) { animation-delay: 0.2s; }
+.blink-char:nth-child(4) { animation-delay: 0.3s; }
+.blink-char:nth-child(5) { animation-delay: 0.4s; }
+.blink-char:nth-child(6) { animation-delay: 0.5s; }
+.blink-char:nth-child(7) { animation-delay: 0.6s; }
+.blink-char:nth-child(8) { animation-delay: 0.7s; }
+.blink-char:nth-child(9) { animation-delay: 0.8s; }
+.blink-char:nth-child(10) { animation-delay: 0.9s; }
+.blink-char:nth-child(11) { animation-delay: 1s; }
+.blink-char:nth-child(12) { animation-delay: 1.1s; }
+.blink-char:nth-child(13) { animation-delay: 1.2s; }
+.blink-char:nth-child(14) { animation-delay: 1.3s; }
+.blink-char:nth-child(15) { animation-delay: 1.4s; }
+
+
+
+
+@keyframes snow-fall {
+  0% {
+      transform: translateY(0);
+      opacity: 0; /* Bắt đầu mờ */
+  }
+  20% {
+      opacity: 1; 
+  }
+  40% {
+    opacity: 1; 
+  }
+  50% {
+    opacity: 0; 
+  }
+  60% {
+    opacity: 1; 
+  }
+  80% {
+    opacity: 1; 
+  }
+  100% {
+      transform: translateY(100vh);
+      opacity: 0; 
+  }
+}
+
+.snowflakes {
+  z-index: 1000;
+  opacity: 0; /* Bắt đầu mờ */
+  animation: fadeIn 2s ease-in forwards;
+  animation-delay: 2s; /* Hiện ra sau 3 giây */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.snowflakes .flake {
+  position: absolute;
+  top: -10px;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  animation: snow-fall 10s linear infinite; /* Thời gian rơi: 10 giây */
+}
+
+.snowflakes .flake-text {
+  color: #ff0000;
+  position: absolute;
+  top: -10px;
+  animation: snow-fall 10s linear infinite;
+}
