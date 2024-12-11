@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const startDate = new Date('2023-11-17T00:00:00'); // Ngày bắt đầu yêu (sửa thành ngày 17/06/2023)
+    const startDate = new Date('2023-11-17T00:00:00'); 
   
     function updateCountdown() {
       const now = new Date();
   
-      // Tính khoảng cách thời gian giữa ngày hiện tại và ngày bắt đầu
+      
       let years = now.getFullYear() - startDate.getFullYear();
       let months = now.getMonth() - startDate.getMonth();
       let days = now.getDate() - startDate.getDate();
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let minutes = now.getMinutes() - startDate.getMinutes();
       let seconds = now.getSeconds() - startDate.getSeconds();
   
-      // Điều chỉnh khi số tháng, ngày, giờ, phút, giây âm
+      
       if (seconds < 0) {
         seconds += 60;
         minutes--;
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         days--;
       }
       if (days < 0) {
-        // Tính số ngày trong tháng trước
+        
         const previousMonth = new Date(now.getFullYear(), now.getMonth(), 0).getDate();
         days += previousMonth;
         months--;
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         years--;
       }
   
-      // Cập nhật vào DOM
+     
       document.getElementById('years').textContent = years;
       document.getElementById('months').textContent = months;
       document.getElementById('days').textContent = days;
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('seconds').textContent = seconds;
     }
   
-    // Cập nhật mỗi giây
+    
     updateCountdown();
     setInterval(updateCountdown, 1000);
   });

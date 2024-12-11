@@ -1,4 +1,3 @@
-/* Tổng quát */
 body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(to right, #ff758c, #ff7eb3);
@@ -12,9 +11,9 @@ body {
 }
 
 .container {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; 
+  justify-content: center;
   align-items: center;
   width: 90%;
   max-width: 1000px;
@@ -22,42 +21,34 @@ body {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
+  text-align: center; 
 
 .countdown {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: auto;
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
 }
 
 .header h1 {
-  height: 100px;
-  width: 500px;
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 10px;
   color: #ffedbc;
-  margin: auto;
 }
 
 .header p {
   font-size: 1.2rem;
   margin-bottom: 20px;
   color: #fff;
-  margin: auto;
 }
 
-/* Các hàng thời gian */
 .time-row {
   display: flex;
-  justify-content: space-around;
+  justify-content: center; 
+  flex-wrap: wrap; 
+  gap: 20px;
   margin-bottom: 20px;
-  width: 100%;
 }
 
 .time-block {
@@ -83,7 +74,8 @@ body {
   color: #fddede;
 }
 
-/* Hiệu ứng */
+
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -95,7 +87,7 @@ body {
   }
 }
 
-/* Hiệu ứng chớp chớp */
+
 .blink-char {
   display: inline-block;
   font-size: 2.5rem;
@@ -106,7 +98,7 @@ body {
   opacity: 0;
 }
 
-/* Hiệu ứng nhấp nháy */
+
 @keyframes blinkEffect {
   0%, 50%, 100% {
     opacity: 0.2;
@@ -116,7 +108,7 @@ body {
   }
 }
 
-/* Thời gian chờ khác nhau cho từng ký tự */
+
 .blink-char:nth-child(1) { animation-delay: 0s; }
 .blink-char:nth-child(2) { animation-delay: 0.1s; }
 .blink-char:nth-child(3) { animation-delay: 0.2s; }
@@ -139,7 +131,7 @@ body {
 @keyframes snow-fall {
   0% {
       transform: translateY(0);
-      opacity: 0; /* Bắt đầu mờ */
+      opacity: 0; 
   }
   20% {
       opacity: 1; 
@@ -164,9 +156,9 @@ body {
 
 .snowflakes {
   z-index: 1000;
-  opacity: 0; /* Bắt đầu mờ */
+  opacity: 0; 
   animation: fadeIn 2s ease-in forwards;
-  animation-delay: 2s; /* Hiện ra sau 3 giây */
+  animation-delay: 2s; 
   position: absolute;
   top: 0;
   left: 0;
@@ -181,7 +173,7 @@ body {
   border-radius: 50%;
   width: 10px;
   height: 10px;
-  animation: snow-fall 10s linear infinite; /* Thời gian rơi: 10 giây */
+  animation: snow-fall 10s linear infinite; 
 }
 
 .snowflakes .flake-text {
